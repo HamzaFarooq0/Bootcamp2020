@@ -3,8 +3,6 @@ name: Bootcamp2020
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -20,6 +18,6 @@ jobs:
         node-version: 12
       
     - name: Installing Surge
-      run: npm install -g surge
+      run: npm install --global surge
     - name: deploying using surge
-      run: surge ./ first-bootcamp2020.surge.sh --token $ {{ secrets.PROJECT001_SURGE_TOKEN }}
+      run: surge ./ first-bootcamp2020.surge.sh --token ${{ secrets.PROJECT001_SURGE_TOKEN }}
